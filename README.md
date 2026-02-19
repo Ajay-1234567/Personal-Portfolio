@@ -9,7 +9,7 @@ UI/UX Designer specializing in mobile app design, UX research, and end-to-end ca
 ## Featured Projects
 
 - **The Luxe** - Fashion App
-- **Craftsy** - Handmade Marketplace  
+
 - **RentEase** - Rental Platform
 
 ## Tech Stack
