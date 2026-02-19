@@ -9,18 +9,9 @@ export const projectsData = [
         demo: 'https://www.behance.net/gallery/241328167/The-Luxe-Fashion-App',
         image: '/the-luxe-cover.png',
     },
+
     {
         id: 2,
-        name: 'Craftsy – Handmade Marketplace',
-        description: 'End-to-end UX case study for a handmade crafts marketplace, solving discovery, trust, and product presentation challenges.',
-        tools: ['Wireframes', 'UI System', 'Case Study', 'Prototyping'],
-        role: 'UI/UX Designer',
-        code: '',
-        demo: 'https://www.behance.net/gallery/236638709/Craftsy-CaseStudy',
-        image: '/craftsy-cover.png',
-    },
-    {
-        id: 3,
         name: 'RentEase – Rental Platform',
         description: 'Rental management and booking app focused on reducing friction in search and inquiry flows.',
         tools: ['Information Architecture', 'UI Screens', 'Mobile Design', 'Visual Design'],
