@@ -31,7 +31,7 @@ function AboutSection() {
             {/* Professional Highlights - UX Focused */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mt-8 pt-8 border-t border-gray-50 text-center uppercase tracking-tighter">
               <div className="group">
-                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-1">3+</div>
+                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-1">2+</div>
                 <div className="text-[10px] md:text-sm font-black text-gray-900 mb-0.5">Case Studies</div>
                 <div className="text-[9px] text-gray-400 font-bold">End-to-end UX</div>
               </div>
