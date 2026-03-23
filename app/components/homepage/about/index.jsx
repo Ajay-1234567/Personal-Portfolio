@@ -22,28 +22,28 @@ function AboutSection() {
           </div>
 
           {/* Main Content Card */}
-          <div className="bg-white rounded-3xl shadow-2xl shadow-gray-200/50 p-6 md:p-12 border border-gray-100 hover:shadow-3xl transition-shadow duration-500 mx-2 md:mx-0">
+          <div className="bg-white rounded-[2rem] shadow-xl shadow-gray-200/50 p-6 md:p-12 border border-gray-100 mx-1 md:mx-0">
             {/* Description with Better Typography */}
-            <p className="text-lg md:text-2xl text-gray-700 leading-relaxed text-center lg:text-left">
+            <p className="text-base md:text-2xl text-gray-700 leading-relaxed text-center lg:text-left font-medium">
               {personalData.description}
             </p>
 
             {/* Professional Highlights - UX Focused */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-8 md:mt-10 pt-8 md:pt-10 border-t border-gray-100">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-2 md:mb-3">3+</div>
-                <div className="text-sm font-bold text-gray-800 mb-1">Case Studies</div>
-                <div className="text-xs text-gray-500">End-to-end UX solutions</div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mt-8 pt-8 border-t border-gray-50 text-center uppercase tracking-tighter">
+              <div className="group">
+                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-1">3+</div>
+                <div className="text-[10px] md:text-sm font-black text-gray-900 mb-0.5">Case Studies</div>
+                <div className="text-[9px] text-gray-400 font-bold">End-to-end UX</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-2 md:mb-3">UX</div>
-                <div className="text-sm font-bold text-gray-800 mb-1">Research First</div>
-                <div className="text-xs text-gray-500">User-centered design</div>
+              <div className="group">
+                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-1">UX</div>
+                <div className="text-[10px] md:text-sm font-black text-gray-900 mb-0.5">Research</div>
+                <div className="text-[9px] text-gray-400 font-bold">User-centered</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-2 md:mb-3">Mobile</div>
-                <div className="text-sm font-bold text-gray-800 mb-1">App Design</div>
-                <div className="text-xs text-gray-500">iOS & Android platforms</div>
+              <div className="group">
+                <div className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent mb-1">Mobile</div>
+                <div className="text-[10px] md:text-sm font-black text-gray-900 mb-0.5">Apps</div>
+                <div className="text-[9px] text-gray-400 font-bold">iOS & Android</div>
               </div>
             </div>
           </div>

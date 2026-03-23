@@ -18,11 +18,11 @@ function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      <div className="container mx-auto px-4 py-4 md:py-6">
-        <div className="bg-white/70 backdrop-blur-xl border border-white/20 rounded-3xl md:rounded-full px-6 md:px-8 py-3 md:py-4 flex items-center justify-between shadow-sm relative">
+      <div className="container mx-auto px-4 py-2 md:py-6">
+        <div className="bg-white/80 backdrop-blur-xl border border-gray-100 rounded-2xl md:rounded-full px-5 md:px-8 py-2 md:py-3.5 flex items-center justify-between shadow-lg relative">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-100 shadow-sm group-hover:scale-110 transition-transform duration-300">
+          <Link href="/" className="flex items-center gap-2 group">
+            <div className="relative w-7 h-7 rounded-full overflow-hidden border border-gray-100 shadow-sm group-hover:scale-110 transition-transform duration-300">
               <Image
                 src="/favicon.png"
                 alt="Ajay Kumar"
@@ -30,7 +30,7 @@ function Navbar() {
                 className="object-cover"
               />
             </div>
-            <span className="text-xl font-bold tracking-tighter text-gray-900 group-hover:text-orange-500 transition-colors">AJAY<span className="text-orange-500">.</span></span>
+            <span className="text-lg md:text-xl font-black tracking-tighter text-gray-900 group-hover:text-orange-500 transition-colors uppercase">AJAY<span className="text-orange-500">.</span></span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -50,17 +50,17 @@ function Navbar() {
             {/* Mobile Menu Button */}
             <button 
               onClick={toggleMenu}
-              className="md:hidden p-2 text-gray-900 hover:bg-gray-100 rounded-full transition-colors"
+              className="md:hidden p-1.5 text-gray-900 hover:bg-gray-100 rounded-full transition-colors"
               aria-label="Toggle Menu"
             >
-              {isOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
+              {isOpen ? <HiX size={22} /> : <HiMenuAlt3 size={22} />}
             </button>
           </div>
 
           {/* Mobile Menu Drawer */}
           {isOpen && (
-            <div className="absolute top-full left-0 right-0 mt-4 mx-0 md:hidden animate-in fade-in slide-in-from-top-4 duration-300">
-              <div className="bg-white/95 backdrop-blur-xl border border-white/20 rounded-3xl p-6 shadow-xl flex flex-col gap-4">
+            <div className="absolute top-full left-0 right-0 mt-3 mx-0 md:hidden animate-in fade-in slide-in-from-top-2 duration-300">
+              <div className="bg-white/95 backdrop-blur-2xl border border-gray-100 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 mx-4">
                 {navLinks.map((link) => (
                   <Link 
                     key={link.name} 
@@ -74,7 +74,7 @@ function Navbar() {
                 <Link 
                   href="#contact" 
                   onClick={() => setIsOpen(false)}
-                  className="bg-gradient-to-r from-orange-500 to-pink-500 text-white text-center py-4 rounded-2xl font-bold mt-2 shadow-lg shadow-orange-500/20"
+                  className="bg-gradient-to-r from-orange-500 to-pink-500 text-white text-center py-3.5 rounded-xl font-bold mt-2 shadow-lg shadow-orange-500/20"
                 >
                   Hire Me
                 </Link>
