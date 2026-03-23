@@ -7,45 +7,42 @@ import { FiArrowRight } from 'react-icons/fi';
 
 function ProjectCard({ project }) {
   return (
-    <div className="group bg-white rounded-3xl p-4 md:p-5 border border-gray-100 hover:border-orange-300 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/10 overflow-hidden hover:-translate-y-2">
-      {/* Project Image Container with Gradient Border Effect */}
-      <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-500 to-pink-500 p-0.5 mb-5 md:mb-7">
-        <div className="w-full h-full bg-gray-50 rounded-2xl overflow-hidden">
-          <Image
-            src={project.image}
-            alt={project.name}
-            fill
-            className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
-        </div>
-
-        {/* Hover Overlay with Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+    <div className="group bg-white rounded-2xl md:rounded-[2.5rem] p-3.5 md:p-6 border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/10 overflow-hidden">
+      {/* Project Image Container */}
+      <div className="relative w-full aspect-[16/10] md:aspect-[4/3] rounded-xl md:rounded-3xl overflow-hidden bg-gray-50 mb-4 md:mb-8">
+        <Image
+          src={project.image}
+          alt={project.name}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+          sizes="(max-width: 768px) 100vw, 500px"
+        />
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
 
-      <div className="px-2 md:px-3 pb-2 md:pb-3">
-        {/* Category/Role with Enhanced Styling */}
-        <div className="flex items-center gap-2 mb-3 md:mb-4">
-          <span className="w-2 h-2 rounded-full bg-gradient-to-r from-orange-500 to-pink-500"></span>
-          <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.15em] text-gray-400">
+      <div className="px-1 md:px-2">
+        {/* Role & Name */}
+        <div className="flex items-center gap-2 mb-2 md:mb-4">
+          <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
+          <span className="text-[9px] md:text-[11px] font-black uppercase tracking-widest text-gray-400">
             {project.role}
           </span>
         </div>
 
-        {/* Title & Description with Better Hierarchy */}
-        <h3 className="text-xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4 group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-pink-500 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300 tracking-tight leading-snug">
+        <h3 className="text-xl md:text-4xl font-black text-gray-900 mb-2 md:mb-4 tracking-tighter uppercase leading-tight">
           {project.name}
         </h3>
-        <p className="text-gray-600 text-sm md:text-base leading-relaxed mb-5 md:mb-7 line-clamp-2 font-medium">
+        
+        <p className="text-gray-500 text-sm md:text-lg leading-relaxed mb-5 md:mb-8 line-clamp-2 font-medium">
           {project.description}
         </p>
 
-        {/* Footer: Tools & Link - Simplified without numbers */}
-        <div className="flex items-center justify-between pt-4 md:pt-5 border-t border-gray-100">
-          <div className="flex gap-2 flex-wrap">
+        {/* Tools & CTA */}
+        <div className="flex items-center justify-between pt-4 md:pt-6 border-t border-gray-50">
+          <div className="flex gap-1.5 md:gap-2 flex-wrap">
             {project.tools.slice(0, 3).map((tool, index) => (
-              <span key={index} className="text-[9px] md:text-[10px] font-bold text-gray-500 bg-gray-50 px-2 md:px-3 py-1 md:py-1.5 rounded-lg border border-gray-100">
+              <span key={index} className="text-[8px] md:text-[10px] font-black text-gray-400 border border-gray-100 px-2.5 py-1 rounded-full uppercase tracking-tighter">
                 {tool}
               </span>
             ))}
@@ -54,9 +51,9 @@ function ProjectCard({ project }) {
           <Link
             href={project.demo || '#'}
             target="_blank"
-            className="w-10 h-10 md:w-11 md:h-11 rounded-full bg-gradient-to-br from-gray-900 to-gray-700 text-white flex items-center justify-center group-hover:from-orange-500 group-hover:to-pink-500 group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-orange-500/30 transition-all duration-300"
+            className="w-9 h-9 md:w-14 md:h-14 rounded-full bg-gray-900 text-white flex items-center justify-center group-hover:bg-orange-500 transition-all duration-300"
           >
-            <FiArrowRight size={16} className="group-hover:rotate-45 transition-transform duration-300" />
+            <FiArrowRight size={18} className="md:w-6 md:h-6" />
           </Link>
         </div>
       </div>
