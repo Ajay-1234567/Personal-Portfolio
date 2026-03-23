@@ -59,23 +59,22 @@ function Navbar() {
 
           {/* Full-Screen Mobile App Menu */}
           {isOpen && (
-            <div className="fixed inset-0 z-[200] md:hidden bg-white animate-in fade-in duration-300">
-              <div className="flex flex-col h-full bg-white relative">
+            <div className="fixed inset-0 z-[999] md:hidden bg-white">
+              <div className="flex flex-col h-full relative">
                 {/* Header in Menu */}
-                <div className="px-6 py-6 flex items-center justify-between border-b border-gray-50">
+                <div className="px-6 py-6 flex items-center justify-between border-b border-gray-100">
                    <Link href="/" onClick={() => setIsOpen(false)} className="text-xl font-black tracking-tighter text-gray-900 uppercase">AJAY<span className="text-orange-500">.</span></Link>
-                   <button onClick={() => setIsOpen(false)} className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center"><HiX size={20} /></button>
+                   <button onClick={() => setIsOpen(false)} className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-900"><HiX size={20} /></button>
                 </div>
 
                 {/* Vertical App Links */}
-                <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
+                <div className="flex-1 flex flex-col items-center justify-center gap-10 px-6">
                   {navLinks.map((link, idx) => (
                     <Link 
                       key={link.name} 
                       href={link.href} 
                       onClick={() => setIsOpen(false)}
-                      className="text-4xl font-black text-gray-900 hover:text-orange-500 transition-all uppercase tracking-tighter animate-in slide-in-from-bottom-4 duration-500 fill-mode-both"
-                      style={{ animationDelay: `${idx * 100}ms` }}
+                      className="text-4xl font-black text-gray-900 hover:text-orange-500 transition-all uppercase tracking-tighter"
                     >
                       {link.name}
                     </Link>
@@ -87,7 +86,7 @@ function Navbar() {
                   <Link 
                     href="#contact" 
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center justify-center w-full bg-gray-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest shadow-xl shadow-gray-200 active:scale-95 transition-all"
+                    className="flex items-center justify-center w-full bg-gray-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest shadow-xl shadow-gray-200"
                   >
                     Get in Touch
                   </Link>

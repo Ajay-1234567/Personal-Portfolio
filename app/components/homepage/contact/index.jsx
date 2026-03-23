@@ -25,13 +25,13 @@ function ContactSection() {
               </p>
 
               <div className="space-y-4">
-                <Link href={`mailto:${personalData.email}`} className="flex items-center gap-4 group p-4 bg-white rounded-2xl border border-gray-100 shadow-sm transition-all hover:border-orange-500 active:scale-95">
-                  <div className="w-12 h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center shrink-0">
-                    <MdAlternateEmail size={24} />
+                <Link href={`mailto:${personalData.email}`} className="flex items-center gap-3 group p-3.5 bg-white rounded-2xl border border-gray-100 shadow-sm transition-all hover:border-orange-500 active:scale-95 overflow-hidden">
+                  <div className="w-10 h-10 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center shrink-0">
+                    <MdAlternateEmail size={20} />
                   </div>
-                  <div>
-                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Contact</p>
-                    <p className="text-sm md:text-base font-black text-gray-900 break-all">{personalData.email}</p>
+                  <div className="min-w-0">
+                    <p className="text-[9px] font-black text-gray-400 uppercase tracking-widest mb-0.5 leading-none">Contact</p>
+                    <p className="text-[12px] md:text-base font-black text-gray-900 truncate tracking-tight">{personalData.email}</p>
                   </div>
                 </Link>
 
