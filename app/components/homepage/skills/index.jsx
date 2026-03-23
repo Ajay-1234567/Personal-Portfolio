@@ -11,7 +11,7 @@ function Skills() {
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Section Title */}
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 text-center">
             Skills & <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent">Tools</span>
           </h2>
 
@@ -29,10 +29,10 @@ function Skills() {
               {skillsData.map((skill, id) => {
                 const skillImage = skillsImage(skill);
                 return (
-                  <div key={id} className="flex items-center gap-6 px-16 group transition-all duration-300">
+                  <div key={id} className="flex items-center gap-4 md:gap-6 px-8 md:px-16 group transition-all duration-300">
                     <div className="flex flex-col items-center gap-3">
                       {skillImage?.src && (
-                        <div className="h-16 w-16 relative bg-gray-50 rounded-2xl p-3 shadow-sm border border-gray-100 group-hover:shadow-md group-hover:scale-110 transition-all duration-500">
+                        <div className="h-14 w-14 md:h-16 md:w-16 relative bg-gray-50 rounded-2xl p-3 shadow-sm border border-gray-100 group-hover:shadow-md group-hover:scale-110 transition-all duration-500">
                           <Image
                             src={skillImage.src}
                             alt={skill}
@@ -41,7 +41,7 @@ function Skills() {
                           />
                         </div>
                       )}
-                      <span className="text-sm font-bold text-gray-400 tracking-widest uppercase group-hover:text-orange-500 transition-colors uppercase whitespace-nowrap">
+                      <span className="text-[10px] md:text-sm font-bold text-gray-400 tracking-widest uppercase group-hover:text-orange-500 transition-colors whitespace-nowrap">
                         {skill}
                       </span>
                     </div>
