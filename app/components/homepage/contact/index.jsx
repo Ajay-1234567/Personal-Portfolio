@@ -6,49 +6,51 @@ import Link from "next/link";
 
 function ContactSection() {
   return (
-    <div id="contact" className="py-12 md:py-24 bg-white">
+    <div id="contact" className="py-12 md:py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto rounded-[2rem] bg-gray-50/50 border border-gray-100 p-5 md:p-14 shadow-lg">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16">
+        {/* App-like Header */}
+        <div className="text-center mb-12 md:mb-20">
+          <h2 className="text-4xl md:text-7xl font-black text-gray-900 leading-none uppercase tracking-tighter mb-4">
+            Let's <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent underline decoration-orange-500/10">Connect</span>.
+          </h2>
+          <p className="text-sm md:text-xl text-gray-400 font-bold uppercase tracking-[0.2em]">Available for Collaboration</p>
+        </div>
 
-            {/* Contact Text */}
-            <div className="space-y-6 md:space-y-10 text-center lg:text-left py-4 md:py-8">
-              <div>
-                <h2 className="text-[2.5rem] md:text-6xl font-black text-gray-900 leading-[1.1] mb-4 uppercase tracking-tighter">
-                  Let's <span className="bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent underline decoration-orange-500/20">Connect</span>.
-                </h2>
-                <p className="text-sm md:text-xl text-gray-500 leading-relaxed font-medium max-w-lg mx-auto lg:mx-0">
-                  I'm currently looking for new opportunities. My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!
-                </p>
-              </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start max-w-6xl mx-auto">
+          {/* Contact Details Card */}
+          <div className="lg:col-span-5 space-y-6">
+            <div className="bg-gray-50/80 backdrop-blur-xl border border-gray-100 p-8 rounded-[2rem] shadow-sm">
+              <p className="text-gray-600 text-sm md:text-lg leading-relaxed font-medium mb-10">
+                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, feel free to reach out using the form or my social profiles!
+              </p>
 
-              <div className="space-y-4 md:space-y-6 flex flex-col items-center lg:items-start pt-2">
-                <Link href={`mailto:${personalData.email}`} className="flex items-center gap-4 group hover:scale-105 transition-transform duration-300">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl flex items-center justify-center border border-gray-100 shadow-sm transition-all group-hover:bg-orange-500 shrink-0">
-                    <MdAlternateEmail className="text-orange-500 group-hover:text-white transition-colors" size={24} />
+              <div className="space-y-4">
+                <Link href={`mailto:${personalData.email}`} className="flex items-center gap-4 group p-4 bg-white rounded-2xl border border-gray-100 shadow-sm transition-all hover:border-orange-500 active:scale-95">
+                  <div className="w-12 h-12 bg-orange-50 text-orange-500 rounded-xl flex items-center justify-center shrink-0">
+                    <MdAlternateEmail size={24} />
                   </div>
-                  <div className="text-left">
-                    <p className="text-[9px] md:text-[11px] font-black text-gray-400 uppercase tracking-[0.2em] mb-0.5">Contact</p>
-                    <p className="text-sm md:text-lg font-black text-gray-900 break-all leading-none">{personalData.email}</p>
+                  <div>
+                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Contact</p>
+                    <p className="text-sm md:text-base font-black text-gray-900 break-all">{personalData.email}</p>
                   </div>
                 </Link>
-                <Link href={personalData.linkedIn} target="_blank" className="flex items-center gap-4 group hover:scale-105 transition-transform duration-300">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-white rounded-2xl flex items-center justify-center border border-gray-100 shadow-sm transition-all group-hover:bg-orange-500 shrink-0">
-                    <BiLogoLinkedin className="text-orange-500 group-hover:text-white transition-colors" size={24} />
+
+                <Link href={personalData.linkedIn} target="_blank" className="flex items-center gap-4 group p-4 bg-white rounded-2xl border border-gray-100 shadow-sm transition-all hover:border-blue-500 active:scale-95">
+                  <div className="w-12 h-12 bg-blue-50 text-blue-500 rounded-xl flex items-center justify-center shrink-0">
+                    <BiLogoLinkedin size={24} />
                   </div>
-                  <div className="text-left">
-                    <p className="text-[9px] md:text-[11px] font-black text-gray-400 uppercase tracking-[0.2em] mb-0.5">LinkedIn</p>
-                    <p className="text-sm md:text-lg font-black text-gray-900 leading-none underline decoration-orange-500/20 decoration-2">Connect Profile</p>
+                  <div>
+                    <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-0.5">Social</p>
+                    <p className="text-sm md:text-base font-black text-gray-900 underline decoration-blue-500/20 underline-offset-4 decoration-2">LinkedIn Profile</p>
                   </div>
                 </Link>
               </div>
             </div>
+          </div>
 
-            {/* Form */}
-            <div className="bg-white rounded-[1.8rem] p-5 md:p-10 shadow-2xl shadow-gray-200/50 border border-gray-100 ring-1 ring-gray-50">
-              <ContactForm />
-            </div>
-
+          {/* Form Card */}
+          <div className="lg:col-span-7 bg-white rounded-[2.5rem] p-6 md:p-12 shadow-2xl shadow-gray-200/50 border border-gray-50 ring-1 ring-gray-100">
+            <ContactForm />
           </div>
         </div>
       </div>

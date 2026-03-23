@@ -55,30 +55,26 @@ function ContactForm() {
 
   return (
     <div className="w-full">
-      <div className="bg-white rounded-lg border border-gray-200 p-6 md:p-8">
-        <p className="text-base md:text-lg text-gray-600 mb-6">
-          {"If you have any questions or concerns, please don't hesitate to contact me. I am open to any work opportunities that align with my skills and interests."}
-        </p>
-        <form className="flex flex-col gap-4">
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-700">Your Name:</label>
+      <div className="bg-transparent">
+        <form className="flex flex-col gap-5">
+          <div className="space-y-1.5 flex flex-col">
+            <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Your Name</label>
             <input
-              className="w-full border rounded-lg border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 outline-none transition-all duration-300 px-4 py-3 text-gray-900"
+              className="w-full bg-gray-50/50 border border-gray-100 rounded-2xl focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/5 outline-none transition-all duration-300 px-5 py-4 text-gray-900 font-bold placeholder:font-medium placeholder:text-gray-300"
               type="text"
               maxLength="100"
               required={true}
               onChange={(e) => setUserInput({ ...userInput, name: e.target.value })}
               onBlur={checkRequired}
               value={userInput.name}
-              placeholder="Enter your name"
-              suppressHydrationWarning={true}
+              placeholder="Full Name"
             />
           </div>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-700">Your Email:</label>
+          <div className="space-y-1.5 flex flex-col">
+            <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Your Email</label>
             <input
-              className="w-full border rounded-lg border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 outline-none transition-all duration-300 px-4 py-3 text-gray-900"
+              className="w-full bg-gray-50/50 border border-gray-100 rounded-2xl focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/5 outline-none transition-all duration-300 px-5 py-4 text-gray-900 font-bold placeholder:font-medium placeholder:text-gray-300"
               type="email"
               maxLength="100"
               required={true}
@@ -88,43 +84,42 @@ function ContactForm() {
                 checkRequired();
                 setError({ ...error, email: !isValidEmail(userInput.email) });
               }}
-              placeholder="Enter your email"
-              suppressHydrationWarning={true}
+              placeholder="email@example.com"
             />
-            {error.email && <p className="text-sm text-red-500">Please provide a valid email!</p>}
+            {error.email && <p className="text-[10px] font-bold text-red-500 ml-1 uppercase">Invalid Email Format</p>}
           </div>
 
-          <div className="flex flex-col gap-2">
-            <label className="text-sm font-medium text-gray-700">Your Message:</label>
+          <div className="space-y-1.5 flex flex-col">
+            <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Your Message</label>
             <textarea
-              className="w-full border rounded-lg border-gray-300 focus:border-gray-900 focus:ring-2 focus:ring-gray-900 focus:ring-opacity-20 outline-none transition-all duration-300 px-4 py-3 text-gray-900 resize-none"
+              className="w-full bg-gray-50/50 border border-gray-100 rounded-2xl focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/5 outline-none transition-all duration-300 px-5 py-4 text-gray-900 font-bold placeholder:font-medium placeholder:text-gray-300 resize-none"
               maxLength="500"
               name="message"
               required={true}
               onChange={(e) => setUserInput({ ...userInput, message: e.target.value })}
               onBlur={checkRequired}
-              rows="5"
+              rows="4"
               value={userInput.message}
-              placeholder="Enter your message"
+              placeholder="How can I help you?"
             />
           </div>
 
-          <div className="flex flex-col gap-3">
-            {error.required && <p className="text-sm text-red-500">
-              All fields are required!
+          <div className="pt-2">
+            {error.required && <p className="text-[10px] font-bold text-red-500 mb-3 ml-1 uppercase">
+              All active fields are required
             </p>}
             <button
-              className="group bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full bg-gray-900 hover:bg-orange-600 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-widest transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50"
               role="button"
               onClick={handleSendMail}
               disabled={isLoading}
             >
               {
                 isLoading ?
-                  <span>Sending Message...</span> :
+                  <span className="animate-pulse">Sending...</span> :
                   <>
                     <span>Send Message</span>
-                    <TbMailForward className="group-hover:translate-x-1 transition-transform duration-300" size={20} />
+                    <TbMailForward size={22} />
                   </>
               }
             </button>

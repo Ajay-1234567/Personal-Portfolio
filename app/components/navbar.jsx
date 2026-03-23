@@ -17,9 +17,9 @@ function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      <div className="container mx-auto px-4 py-2 md:py-6">
-        <div className="bg-white/80 backdrop-blur-xl border border-gray-100 rounded-2xl md:rounded-full px-5 md:px-8 py-2 md:py-3.5 flex items-center justify-between shadow-lg relative">
+    <nav className="fixed top-0 left-0 right-0 z-[100] transition-all duration-300">
+      <div className="container mx-auto px-4 py-3 md:py-6">
+        <div className="bg-white/90 backdrop-blur-2xl border border-gray-100 rounded-2xl md:rounded-full px-5 md:px-8 py-2 md:py-3.5 flex items-center justify-between shadow-lg relative">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative w-7 h-7 rounded-full overflow-hidden border border-gray-100 shadow-sm group-hover:scale-110 transition-transform duration-300">
@@ -47,37 +47,51 @@ function Navbar() {
               Hire Me
             </Link>
             
-            {/* Mobile Menu Button */}
+            {/* Mobile Menu Button - App Style */}
             <button 
               onClick={toggleMenu}
-              className="md:hidden p-1.5 text-gray-900 hover:bg-gray-100 rounded-full transition-colors"
+              className="md:hidden w-10 h-10 flex items-center justify-center text-gray-900 bg-gray-50 rounded-full transition-all active:scale-90"
               aria-label="Toggle Menu"
             >
-              {isOpen ? <HiX size={22} /> : <HiMenuAlt3 size={22} />}
+              {isOpen ? <HiX size={20} /> : <HiMenuAlt3 size={20} />}
             </button>
           </div>
 
-          {/* Mobile Menu Drawer */}
+          {/* Full-Screen Mobile App Menu */}
           {isOpen && (
-            <div className="absolute top-full left-0 right-0 mt-3 mx-0 md:hidden animate-in fade-in slide-in-from-top-2 duration-300">
-              <div className="bg-white/95 backdrop-blur-2xl border border-gray-100 rounded-2xl p-6 shadow-2xl flex flex-col gap-4 mx-4">
-                {navLinks.map((link) => (
+            <div className="fixed inset-0 z-[200] md:hidden bg-white animate-in fade-in duration-300">
+              <div className="flex flex-col h-full bg-white relative">
+                {/* Header in Menu */}
+                <div className="px-6 py-6 flex items-center justify-between border-b border-gray-50">
+                   <Link href="/" onClick={() => setIsOpen(false)} className="text-xl font-black tracking-tighter text-gray-900 uppercase">AJAY<span className="text-orange-500">.</span></Link>
+                   <button onClick={() => setIsOpen(false)} className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center"><HiX size={20} /></button>
+                </div>
+
+                {/* Vertical App Links */}
+                <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
+                  {navLinks.map((link, idx) => (
+                    <Link 
+                      key={link.name} 
+                      href={link.href} 
+                      onClick={() => setIsOpen(false)}
+                      className="text-4xl font-black text-gray-900 hover:text-orange-500 transition-all uppercase tracking-tighter animate-in slide-in-from-bottom-4 duration-500 fill-mode-both"
+                      style={{ animationDelay: `${idx * 100}ms` }}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                </div>
+
+                {/* Footer in Menu */}
+                <div className="p-6">
                   <Link 
-                    key={link.name} 
-                    href={link.href} 
+                    href="#contact" 
                     onClick={() => setIsOpen(false)}
-                    className="text-lg font-bold text-gray-800 hover:text-orange-500 transition-colors py-2 border-b border-gray-50 last:border-0"
+                    className="flex items-center justify-center w-full bg-gray-900 text-white py-5 rounded-2xl font-black uppercase tracking-widest shadow-xl shadow-gray-200 active:scale-95 transition-all"
                   >
-                    {link.name}
+                    Get in Touch
                   </Link>
-                ))}
-                <Link 
-                  href="#contact" 
-                  onClick={() => setIsOpen(false)}
-                  className="bg-gradient-to-r from-orange-500 to-pink-500 text-white text-center py-3.5 rounded-xl font-bold mt-2 shadow-lg shadow-orange-500/20"
-                >
-                  Hire Me
-                </Link>
+                </div>
               </div>
             </div>
           )}
