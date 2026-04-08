@@ -10,7 +10,6 @@ UI/UX Designer specializing in mobile app design, UX research, and end-to-end ca
 
 - **The Luxe** - Fashion App
 
-- **RentEase** - Rental Platform
 
 ## Tech Stack
 

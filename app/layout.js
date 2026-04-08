@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "Ajay Kumar - UI/UX Designer Portfolio",
   description:
-    "UI/UX Designer specializing in mobile app design, UX research, and end-to-end case studies. Experience across fashion, e-commerce, fitness, and rental platforms.",
+    "UI/UX Designer specializing in mobile app design, UX research, and end-to-end case studies. Experience across fashion, e-commerce, and fitness.",
   icons: {
     icon: '/favicon.png',
   },

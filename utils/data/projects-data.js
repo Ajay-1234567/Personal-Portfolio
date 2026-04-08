@@ -8,19 +8,9 @@ export const projectsData = [
         code: '',
         demo: 'https://www.behance.net/gallery/241328167/The-Luxe-Fashion-App',
         image: '/the-luxe-cover.png',
-    },
-
-    {
-        id: 2,
-        name: 'RentEase – Rental Platform',
-        description: 'Rental management and booking app focused on reducing friction in search and inquiry flows.',
-        tools: ['Information Architecture', 'UI Screens', 'Mobile Design', 'Visual Design'],
-        role: 'UI/UX Designer',
-        code: '',
-        demo: 'https://www.behance.net/gallery/239379997/RentEase-UXUI-Case-Study',
-        image: '/rentease-cover.png',
     }
 ];
+
 
 
 // Do not remove any property.
