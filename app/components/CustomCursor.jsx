@@ -53,12 +53,12 @@ function CustomCursor() {
         }}
         transition={{
           type: "spring",
-          stiffness: 250,
-          damping: 20,
-          mass: 0.5,
+          stiffness: 1000,
+          damping: 40,
+          mass: 0.1,
         }}
       >
-        <div className="w-full h-full bg-white/20 backdrop-blur-sm border border-white/30 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
+        <div className="w-full h-full bg-white/20 border border-white/40 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.3)]" />
       </motion.div>
       <motion.div
         className="fixed top-0 left-0 w-2 h-2 rounded-full bg-white pointer-events-none z-[10000] mix-blend-difference hidden md:block"
@@ -68,10 +68,8 @@ function CustomCursor() {
           opacity: isHovering ? 0 : 1,
         }}
         transition={{
-          type: "spring",
-          stiffness: 800,
-          damping: 30,
-          mass: 0.1,
+          type: "tween",
+          duration: 0
         }}
       />
     </>
