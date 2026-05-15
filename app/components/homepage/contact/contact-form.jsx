@@ -1,5 +1,4 @@
 "use client";
-// @flow strict
 import { isValidEmail } from "@/utils/check-email";
 import axios from "axios";
 import { useState } from "react";
@@ -58,9 +57,9 @@ function ContactForm() {
       <div className="bg-transparent">
         <form className="flex flex-col gap-5">
           <div className="space-y-1.5 flex flex-col">
-            <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Your Name</label>
+            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Your Name</label>
             <input
-              className="w-full bg-gray-50/50 border border-gray-100 rounded-2xl focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/5 outline-none transition-all duration-300 px-5 py-4 text-gray-900 font-bold placeholder:font-medium placeholder:text-gray-300"
+              className="w-full bg-white/5 border border-white/10 rounded-2xl focus:bg-white/10 focus:border-primary focus:ring-4 focus:ring-primary/20 outline-none transition-all duration-300 px-5 py-4 text-white font-medium placeholder:text-gray-600"
               type="text"
               maxLength="100"
               required={true}
@@ -72,9 +71,9 @@ function ContactForm() {
           </div>
 
           <div className="space-y-1.5 flex flex-col">
-            <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Your Email</label>
+            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Your Email</label>
             <input
-              className="w-full bg-gray-50/50 border border-gray-100 rounded-2xl focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/5 outline-none transition-all duration-300 px-5 py-4 text-gray-900 font-bold placeholder:font-medium placeholder:text-gray-300"
+              className="w-full bg-white/5 border border-white/10 rounded-2xl focus:bg-white/10 focus:border-primary focus:ring-4 focus:ring-primary/20 outline-none transition-all duration-300 px-5 py-4 text-white font-medium placeholder:text-gray-600"
               type="email"
               maxLength="100"
               required={true}
@@ -86,13 +85,13 @@ function ContactForm() {
               }}
               placeholder="email@example.com"
             />
-            {error.email && <p className="text-[10px] font-bold text-red-500 ml-1 uppercase">Invalid Email Format</p>}
+            {error.email && <p className="text-[10px] font-bold text-red-400 ml-1 uppercase">Invalid Email Format</p>}
           </div>
 
           <div className="space-y-1.5 flex flex-col">
-            <label className="text-xs font-black text-gray-400 uppercase tracking-widest ml-1">Your Message</label>
+            <label className="text-xs font-bold text-gray-400 uppercase tracking-widest ml-1">Your Message</label>
             <textarea
-              className="w-full bg-gray-50/50 border border-gray-100 rounded-2xl focus:bg-white focus:border-orange-500 focus:ring-4 focus:ring-orange-500/5 outline-none transition-all duration-300 px-5 py-4 text-gray-900 font-bold placeholder:font-medium placeholder:text-gray-300 resize-none"
+              className="w-full bg-white/5 border border-white/10 rounded-2xl focus:bg-white/10 focus:border-primary focus:ring-4 focus:ring-primary/20 outline-none transition-all duration-300 px-5 py-4 text-white font-medium placeholder:text-gray-600 resize-none"
               maxLength="500"
               name="message"
               required={true}
@@ -105,11 +104,11 @@ function ContactForm() {
           </div>
 
           <div className="pt-2">
-            {error.required && <p className="text-[10px] font-bold text-red-500 mb-3 ml-1 uppercase">
+            {error.required && <p className="text-[10px] font-bold text-red-400 mb-3 ml-1 uppercase">
               All active fields are required
             </p>}
             <button
-              className="w-full bg-gray-900 hover:bg-orange-600 text-white px-8 py-5 rounded-2xl font-black uppercase tracking-widest transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/20 active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50"
+              className="w-full bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-2xl font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 mt-2"
               role="button"
               onClick={handleSendMail}
               disabled={isLoading}

@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
 import ScrollToTop from "./components/helper/scroll-to-top";
 import Navbar from "./components/navbar";
+import CustomCursor from "./components/CustomCursor";
 import "./css/card.scss";
 import "./css/globals.css";
 
@@ -22,9 +23,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} md:cursor-none`}>
+        <CustomCursor />
         <ToastContainer />
-        <main className="min-h-screen relative bg-white">
+        <main className="min-h-screen relative bg-[#0B0F19] text-white overflow-x-hidden">
           <Navbar />
           {children}
           <ScrollToTop />

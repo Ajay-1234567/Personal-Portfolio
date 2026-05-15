@@ -2,88 +2,101 @@
 
 import { personalData } from "@/utils/data/personal-data";
 import Link from "next/link";
-import Image from "next/image";
 import { FaDownload } from "react-icons/fa";
+import { FiArrowRight } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] md:min-h-screen pt-24 pb-12 md:pt-32 md:pb-20 flex items-center justify-center overflow-hidden bg-[#f3f4f6]">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center">
-          {/* Left Column - Content */}
-          <div className="space-y-5 md:space-y-8 order-2 lg:order-1 text-center lg:text-left">
-            {/* Professional Badge */}
-            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 px-4 py-2 rounded-full">
-              <div className="w-1.5 h-1.5 bg-orange-500 rounded-full animate-pulse"></div>
-              <span className="text-[12px] md:text-sm font-bold text-orange-900 uppercase tracking-tighter">Available for New Opportunities</span>
-            </div>
+    <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-[#0B0F19]">
+      {/* Background Glows */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[120px] pointer-events-none mix-blend-screen" />
 
-            {/* Title with Enhanced Typography */}
-            <div>
-              <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-gray-900 leading-none md:leading-[0.85] mb-4 uppercase">
-                {personalData.name}<span className="text-orange-500">.</span>
-              </h1>
-              <p className="text-lg md:text-3xl font-bold bg-gradient-to-r from-orange-500 to-pink-500 bg-clip-text text-transparent uppercase tracking-tight">
-                {personalData.designation}
-              </p>
-            </div>
+      <div className="container mx-auto px-4 relative z-10 max-w-7xl">
+        <div className="flex flex-col items-center text-center space-y-10 max-w-4xl mx-auto">
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-morphism-dark border-white/10"
+          >
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span className="text-sm font-medium text-gray-300 tracking-wide uppercase">
+              Available for New Opportunities
+            </span>
+          </motion.div>
 
-            {/* Professional Tagline */}
-            <p className="text-sm md:text-xl text-gray-600 max-w-lg mx-auto lg:mx-0 leading-relaxed font-medium">
-              {personalData.description}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="space-y-6"
+          >
+            <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tight text-white leading-[1.1]">
+              UI/UX Designer & <br className="hidden md:block" />
+              <span className="text-gradient">Digital Experience Creator</span>
+            </h1>
+            
+            <p className="text-lg md:text-2xl text-gray-400 font-medium max-w-2xl mx-auto leading-relaxed">
+              Designing intuitive and visually engaging digital experiences with a focus on usability and modern aesthetics.
             </p>
+          </motion.div>
 
-            {/* CTAs with Enhanced Styling */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 md:gap-5 pt-4">
-              <Link
-                href="#contact"
-                className="group bg-gradient-to-r from-orange-500 to-pink-500 text-white px-7 md:px-8 py-3.5 md:py-4 rounded-full font-bold text-sm md:text-base hover:shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg shadow-orange-500/10"
-              >
-                <span className="flex items-center gap-2">
-                  Let's Talk
-                  <span className="group-hover:translate-x-1 transition-transform">→</span>
-                </span>
-              </Link>
-              <Link
-                href="#projects"
-                className="text-gray-900 font-bold text-sm md:text-base flex items-center gap-2 group px-6 md:px-7 py-3.5 md:py-4 border-2 border-gray-200 rounded-full hover:border-orange-500 hover:text-orange-500 transition-all duration-300"
-              >
-                Projects
-                <span className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform">↗</span>
-              </Link>
-              <Link
-                href={personalData.resume}
-                target='_blank'
-                className="text-gray-400 font-bold text-sm md:text-base flex items-center gap-2 group px-5 md:px-6 py-3.5 md:py-4 hover:text-orange-500 transition-all duration-300"
-              >
-                Resume
-                <span className="group-hover:translate-y-1 transition-transform"><FaDownload /></span>
-              </Link>
-            </div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-4"
+          >
+            <Link
+              href="#projects"
+              className="group relative px-8 py-4 bg-white text-black rounded-full font-bold text-base overflow-hidden flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)]"
+            >
+              <span>View Projects</span>
+              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            
+            <Link
+              href={personalData.resume}
+              target='_blank'
+              className="group px-8 py-4 rounded-full font-bold text-base text-white border border-white/20 hover:bg-white/10 flex items-center gap-2 transition-all hover:border-white/50 active:scale-95"
+            >
+              <span>Download Resume</span>
+              <FaDownload className="group-hover:translate-y-1 transition-transform" />
+            </Link>
+          </motion.div>
+        </div>
 
-          {/* Right Column - Profile Photo */}
-          <div className="relative order-1 lg:order-2 mb-8 lg:mb-0">
-            {/* Professional Profile Display */}
-            <div className="relative w-[180px] sm:w-[250px] md:w-full aspect-square md:aspect-[4/5] max-w-sm mx-auto rounded-[2.5rem] md:rounded-[3rem] overflow-hidden shadow-2xl bg-gradient-to-br from-orange-500 to-pink-500 p-1">
-              <div className="w-full h-full bg-white rounded-[2.3rem] md:rounded-[2.8rem] overflow-hidden">
-                <Image
-                  src={personalData.profile || '/profile.png'}
-                  alt={`${personalData.name} - ${personalData.designation}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 500px"
-                  priority
-                />
-              </div>
-            </div>
-
-            {/* Floating Badge - More subtle on mobile */}
-            <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-white px-5 py-2 rounded-full shadow-xl border border-gray-50 whitespace-nowrap">
-              <p className="text-[11px] md:text-sm font-black text-gray-900 uppercase tracking-tighter">{personalData.designation}</p>
-            </div>
+        {/* Abstract Floating UI Elements for Hero */}
+        <div className="absolute top-[20%] left-[5%] hidden lg:block animate-float opacity-80">
+          <div className="w-48 h-32 rounded-2xl glass-morphism-dark border-white/10 p-4 shadow-2xl flex flex-col gap-3">
+            <div className="w-1/2 h-4 bg-white/20 rounded-md" />
+            <div className="w-3/4 h-3 bg-white/10 rounded-md" />
+            <div className="w-full h-12 bg-primary/30 rounded-lg mt-auto" />
           </div>
         </div>
+
+        <div className="absolute top-[40%] right-[5%] hidden lg:block animate-float-delayed opacity-80">
+          <div className="w-56 h-40 rounded-2xl glass-morphism-dark border-white/10 p-5 shadow-2xl flex flex-col gap-4">
+             <div className="flex items-center gap-3">
+               <div className="w-10 h-10 rounded-full bg-secondary/30" />
+               <div className="flex flex-col gap-2 flex-1">
+                 <div className="w-full h-2 bg-white/20 rounded-md" />
+                 <div className="w-2/3 h-2 bg-white/10 rounded-md" />
+               </div>
+             </div>
+             <div className="flex gap-2 mt-auto">
+               <div className="w-1/2 h-8 bg-white/10 rounded-lg" />
+               <div className="w-1/2 h-8 bg-white/10 rounded-lg" />
+             </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

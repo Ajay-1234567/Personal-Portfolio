@@ -1,60 +1,89 @@
-// @flow strict
-
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiArrowRight } from 'react-icons/fi';
+import { SiBehance } from 'react-icons/si';
 
 function ProjectCard({ project }) {
   return (
-    <div className="group bg-white rounded-2xl md:rounded-[2.5rem] p-3.5 md:p-6 border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-500/10 overflow-hidden">
+    <div className="group glass-morphism-dark rounded-[2rem] p-4 md:p-6 border border-white/10 transition-all duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(124,58,237,0.1)] overflow-hidden flex flex-col h-full">
       {/* Project Image Container */}
-      <div className="relative w-full aspect-[16/10] md:aspect-[4/3] rounded-xl md:rounded-3xl overflow-hidden bg-gray-50 mb-4 md:mb-8">
+      <div className="relative w-full aspect-[4/3] rounded-2xl md:rounded-[1.5rem] overflow-hidden bg-black/50 mb-6 md:mb-8 border border-white/5">
         <Image
           src={project.image}
           alt={project.name}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-1000 ease-out"
+          className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100"
           sizes="(max-width: 768px) 100vw, 500px"
         />
         {/* Hover Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-      </div>
-
-      <div className="px-1 md:px-2">
-        {/* Role & Name */}
-        <div className="flex items-center gap-2 mb-2 md:mb-4">
-          <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span>
-          <span className="text-[9px] md:text-[11px] font-black uppercase tracking-widest text-gray-400">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-transparent to-transparent opacity-60" />
+        
+        {/* Role Badge inside image area */}
+        <div className="absolute top-4 left-4 bg-black/50 backdrop-blur-md border border-white/10 px-3 py-1.5 rounded-full flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+          <span className="text-[10px] font-bold uppercase tracking-widest text-white">
             {project.role}
           </span>
         </div>
+      </div>
 
-        <h3 className="text-xl md:text-4xl font-black text-gray-900 mb-2 md:mb-4 tracking-tighter uppercase leading-tight">
+      <div className="px-2 flex flex-col flex-grow">
+        <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight leading-tight">
           {project.name}
         </h3>
         
-        <p className="text-gray-500 text-sm md:text-lg leading-relaxed mb-5 md:mb-8 line-clamp-2 font-medium">
+        <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6 font-light">
           {project.description}
         </p>
 
-        {/* Tools & CTA */}
-        <div className="flex items-center justify-between pt-4 md:pt-6 border-t border-gray-50">
-          <div className="flex gap-1.5 md:gap-2 flex-wrap">
-            {project.tools.slice(0, 3).map((tool, index) => (
-              <span key={index} className="text-[8px] md:text-[10px] font-black text-gray-400 border border-gray-100 px-2.5 py-1 rounded-full uppercase tracking-tighter">
+        {/* Problem & Solution (if available) */}
+        {(project.problem || project.solution) && (
+           <div className="space-y-4 mb-8 bg-white/5 p-4 rounded-xl border border-white/5">
+              {project.problem && (
+                <div>
+                  <h4 className="text-xs text-primary font-bold uppercase tracking-wider mb-1">Problem</h4>
+                  <p className="text-sm text-gray-300">{project.problem}</p>
+                </div>
+              )}
+              {project.solution && (
+                <div>
+                  <h4 className="text-xs text-secondary font-bold uppercase tracking-wider mb-1">Solution</h4>
+                  <p className="text-sm text-gray-300">{project.solution}</p>
+                </div>
+              )}
+           </div>
+        )}
+
+        <div className="mt-auto">
+          {/* Tools */}
+          <div className="flex flex-wrap gap-2 mb-6">
+            {project.tools.map((tool, index) => (
+              <span key={index} className="text-[10px] font-bold text-gray-300 border border-white/10 bg-white/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
                 {tool}
               </span>
             ))}
           </div>
 
-          <Link
-            href={project.demo || '#'}
-            target="_blank"
-            className="w-9 h-9 md:w-14 md:h-14 rounded-full bg-gray-900 text-white flex items-center justify-center group-hover:bg-orange-500 transition-all duration-300"
-          >
-            <FiArrowRight size={18} className="md:w-6 md:h-6" />
-          </Link>
+          {/* CTA Buttons */}
+          <div className="flex items-center gap-3 pt-6 border-t border-white/10">
+            <Link
+              href={project.demo || '#'}
+              target="_blank"
+              className="flex-1 bg-white text-black py-3 px-6 rounded-full font-bold text-sm flex items-center justify-center gap-2 group-hover:bg-gray-200 transition-colors"
+            >
+              View Case Study
+              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+            
+            <Link
+              href={project.demo || '#'}
+              target="_blank"
+              className="w-12 h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-all"
+            >
+              <SiBehance size={18} />
+            </Link>
+          </div>
         </div>
       </div>
     </div>
