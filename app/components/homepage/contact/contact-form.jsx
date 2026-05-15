@@ -4,6 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
 import { toast } from "react-toastify";
+import MagneticButton from "../../helper/magnetic-button";
 
 function ContactForm() {
   const [error, setError] = useState({ email: false, required: false });
@@ -107,21 +108,23 @@ function ContactForm() {
             {error.required && <p className="text-[10px] font-bold text-red-400 mb-3 ml-1 uppercase">
               All active fields are required
             </p>}
-            <button
-              className="w-full bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-2xl font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 mt-2"
-              role="button"
-              onClick={handleSendMail}
-              disabled={isLoading}
-            >
-              {
-                isLoading ?
-                  <span className="animate-pulse">Sending...</span> :
-                  <>
-                    <span>Send Message</span>
-                    <TbMailForward size={22} />
-                  </>
-              }
-            </button>
+            <MagneticButton className="w-full">
+              <button
+                className="w-full bg-white hover:bg-gray-200 text-black px-8 py-4 rounded-2xl font-bold uppercase tracking-widest transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 mt-2"
+                role="button"
+                onClick={handleSendMail}
+                disabled={isLoading}
+              >
+                {
+                  isLoading ?
+                    <span className="animate-pulse">Sending...</span> :
+                    <>
+                      <span>Send Message</span>
+                      <TbMailForward size={22} />
+                    </>
+                }
+              </button>
+            </MagneticButton>
           </div>
         </form>
       </div>
