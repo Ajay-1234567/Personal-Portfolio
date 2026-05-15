@@ -9,8 +9,8 @@ import MagneticButton from "../../helper/magnetic-button";
 
 function HeroSection() {
   const { scrollY } = useScroll();
-  const y1 = useTransform(scrollY, [0, 1000], [0, -200]);
-  const y2 = useTransform(scrollY, [0, 1000], [0, -300]);
+  const y1 = useTransform(scrollY, [0, 1000], [0, -400]);
+  const y2 = useTransform(scrollY, [0, 1000], [0, -600]);
   
   return (
     <section className="relative min-h-screen pt-32 pb-20 flex items-center justify-center overflow-hidden bg-[#0B0F19]">
@@ -89,28 +89,38 @@ function HeroSection() {
         </div>
 
         {/* Abstract Floating UI Elements for Hero with Parallax */}
-        <motion.div style={{ y: y1 }} className="absolute top-[20%] left-[5%] hidden lg:block animate-float opacity-80">
-          <div className="w-48 h-32 rounded-2xl glass-morphism-dark border-white/10 p-4 shadow-2xl flex flex-col gap-3">
-            <div className="w-1/2 h-4 bg-white/20 rounded-md" />
-            <div className="w-3/4 h-3 bg-white/10 rounded-md" />
-            <div className="w-full h-12 bg-primary/30 rounded-lg mt-auto" />
-          </div>
+        <motion.div style={{ y: y1 }} className="absolute top-[20%] left-[5%] hidden lg:block opacity-80 pointer-events-none">
+          <motion.div
+            animate={{ y: [0, -20, 0] }}
+            transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+          >
+            <div className="w-48 h-32 rounded-2xl glass-morphism-dark border-white/10 p-4 shadow-2xl flex flex-col gap-3">
+              <div className="w-1/2 h-4 bg-white/20 rounded-md" />
+              <div className="w-3/4 h-3 bg-white/10 rounded-md" />
+              <div className="w-full h-12 bg-primary/30 rounded-lg mt-auto" />
+            </div>
+          </motion.div>
         </motion.div>
 
-        <motion.div style={{ y: y2 }} className="absolute top-[40%] right-[5%] hidden lg:block animate-float-delayed opacity-80">
-          <div className="w-56 h-40 rounded-2xl glass-morphism-dark border-white/10 p-5 shadow-2xl flex flex-col gap-4">
-             <div className="flex items-center gap-3">
-               <div className="w-10 h-10 rounded-full bg-secondary/30" />
-               <div className="flex flex-col gap-2 flex-1">
-                 <div className="w-full h-2 bg-white/20 rounded-md" />
-                 <div className="w-2/3 h-2 bg-white/10 rounded-md" />
+        <motion.div style={{ y: y2 }} className="absolute top-[40%] right-[5%] hidden lg:block opacity-80 pointer-events-none">
+          <motion.div
+            animate={{ y: [0, -30, 0] }}
+            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+          >
+            <div className="w-56 h-40 rounded-2xl glass-morphism-dark border-white/10 p-5 shadow-2xl flex flex-col gap-4">
+               <div className="flex items-center gap-3">
+                 <div className="w-10 h-10 rounded-full bg-secondary/30" />
+                 <div className="flex flex-col gap-2 flex-1">
+                   <div className="w-full h-2 bg-white/20 rounded-md" />
+                   <div className="w-2/3 h-2 bg-white/10 rounded-md" />
+                 </div>
                </div>
-             </div>
-             <div className="flex gap-2 mt-auto">
-               <div className="w-1/2 h-8 bg-white/10 rounded-lg" />
-               <div className="w-1/2 h-8 bg-white/10 rounded-lg" />
-             </div>
-          </div>
+               <div className="flex gap-2 mt-auto">
+                 <div className="w-1/2 h-8 bg-white/10 rounded-lg" />
+                 <div className="w-1/2 h-8 bg-white/10 rounded-lg" />
+               </div>
+            </div>
+          </motion.div>
         </motion.div>
 
       </div>

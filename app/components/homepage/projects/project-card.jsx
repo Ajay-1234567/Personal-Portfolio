@@ -39,7 +39,7 @@ function ProjectCard({ project }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="group glass-morphism-dark rounded-[2rem] p-4 md:p-6 border border-white/10 transition-colors duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(124,58,237,0.1)] overflow-hidden flex flex-col h-full perspective-1000 cursor-view"
+      className="group glass-morphism-dark rounded-[2rem] p-4 md:p-6 border border-white/10 transition-colors duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(124,58,237,0.1)] overflow-hidden flex flex-col h-full [perspective:1000px] cursor-view"
     >
       <div style={{ transform: "translateZ(30px)" }} className="flex flex-col h-full">
         {/* Project Image Container */}
