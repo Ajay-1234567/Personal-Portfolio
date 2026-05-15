@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FaDownload } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 import { motion, useScroll, useTransform } from "framer-motion";
-import MagneticButton from "../helper/magnetic-button";
+import MagneticButton from "../../helper/magnetic-button";
 
 function HeroSection() {
   const { scrollY } = useScroll();
