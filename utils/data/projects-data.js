@@ -22,6 +22,18 @@ export const projectsData = [
         code: '',
         demo: 'https://www.behance.net/gallery/241328167/The-Luxe-Fashion-App',
         image: '/the-luxe-cover.png',
+    },
+    {
+        id: 3,
+        name: 'Academic Project Submission System',
+        description: 'A modern academic management platform designed to streamline project submissions, improve collaboration between students and faculty, and simplify academic workflows through an intuitive user experience.',
+        problem: 'Academic project submissions are often scattered, making tracking and feedback difficult for both students and faculty.',
+        solution: 'Designed an organized workflow platform with a clean dashboard, dedicated submission tracking, and a built-in faculty review system.',
+        tools: ['Clean dashboard UI', 'Submission tracking', 'Faculty review system', 'Organized workflow', 'Responsive interface'],
+        role: 'UI/UX Designer',
+        code: '',
+        demo: 'https://www.behance.net/gallery/249760565/Academic-Project-Submission-System',
+        image: '/academic-project.png',
     }
 ];
 
