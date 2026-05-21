@@ -39,10 +39,10 @@ function ProjectCard({ project }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-      className="group glass-morphism-dark rounded-[2rem] p-4 md:p-6 border border-white/10 transition-colors duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(124,58,237,0.1)] flex flex-col h-full [perspective:1000px] cursor-view"
+      className="group glass-morphism-dark rounded-[1.5rem] p-4 border border-white/10 transition-colors duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(124,58,237,0.1)] flex flex-col h-full [perspective:1000px] cursor-view"
     >
       <div style={{ transform: "translateZ(30px)" }} className="flex flex-col h-full">
-        <Link href={project.demo || '#'} target="_blank" className="relative w-full aspect-[4/3] rounded-2xl md:rounded-[1.5rem] overflow-hidden bg-black/50 mb-6 md:mb-8 border border-white/5 cursor-none">
+        <Link href={project.demo || '#'} target="_blank" className="relative w-full aspect-video rounded-xl md:rounded-2xl overflow-hidden bg-black/50 mb-5 border border-white/5 cursor-none">
           <Image
             src={project.image}
             alt={project.name}
@@ -64,28 +64,28 @@ function ProjectCard({ project }) {
           </div>
         </Link>
 
-        <div className="px-2 flex flex-col flex-grow">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 tracking-tight leading-tight">
+        <div className="px-1 flex flex-col flex-grow">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight leading-tight">
             {project.name}
           </h3>
           
-          <p className="text-gray-400 text-sm md:text-base leading-relaxed mb-6 font-light">
+          <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-5 font-light line-clamp-3">
             {project.description}
           </p>
 
           {/* Problem & Solution (if available) */}
           {(project.problem || project.solution) && (
-             <div className="space-y-4 mb-8 bg-white/5 p-4 rounded-xl border border-white/5">
+             <div className="space-y-3 mb-6 bg-white/5 p-3 rounded-xl border border-white/5">
                 {project.problem && (
                   <div>
-                    <h4 className="text-xs text-primary font-bold uppercase tracking-wider mb-1">Problem</h4>
-                    <p className="text-sm text-gray-300">{project.problem}</p>
+                    <h4 className="text-[10px] text-primary font-bold uppercase tracking-wider mb-1">Problem</h4>
+                    <p className="text-[11px] text-gray-300 line-clamp-2">{project.problem}</p>
                   </div>
                 )}
                 {project.solution && (
                   <div>
-                    <h4 className="text-xs text-secondary font-bold uppercase tracking-wider mb-1">Solution</h4>
-                    <p className="text-sm text-gray-300">{project.solution}</p>
+                    <h4 className="text-[10px] text-secondary font-bold uppercase tracking-wider mb-1">Solution</h4>
+                    <p className="text-[11px] text-gray-300 line-clamp-2">{project.solution}</p>
                   </div>
                 )}
              </div>
@@ -93,20 +93,20 @@ function ProjectCard({ project }) {
 
           <div className="mt-auto">
             {/* Tools */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-1.5 mb-5">
               {project.tools.map((tool, index) => (
-                <span key={index} className="text-[10px] font-bold text-gray-300 border border-white/10 bg-white/5 px-3 py-1.5 rounded-full uppercase tracking-wider">
+                <span key={index} className="text-[9px] font-bold text-gray-300 border border-white/10 bg-white/5 px-2.5 py-1 rounded-full uppercase tracking-wider">
                   {tool}
                 </span>
               ))}
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex items-center gap-3 pt-6 border-t border-white/10">
+            <div className="flex items-center gap-2 pt-5 border-t border-white/10">
               <Link
                 href={project.demo || '#'}
                 target="_blank"
-                className="flex-1 bg-white text-black py-3 px-6 rounded-full font-bold text-sm flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors"
+                className="flex-1 bg-white text-black py-2.5 px-4 rounded-full font-bold text-xs flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors"
               >
                 View Case Study
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -115,7 +115,7 @@ function ProjectCard({ project }) {
               <Link
                 href={project.demo || '#'}
                 target="_blank"
-                className="w-12 h-12 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-all"
+                className="w-10 h-10 rounded-full border border-white/20 text-white flex items-center justify-center hover:bg-white/10 hover:border-white/40 transition-all"
               >
                 <SiBehance size={18} />
               </Link>

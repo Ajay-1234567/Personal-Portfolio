@@ -19,8 +19,8 @@ function Projects() {
           </p>
         </div>
 
-        {/* Projects Grid - Using 1 col on mobile, 2 on lg */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+        {/* Projects Grid - Using 1 col on mobile, 2 on md, 3 on lg */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {projectsData.map((project, index) => (
             <motion.div
               key={project.id}
