@@ -42,13 +42,14 @@ function ProjectCard({ project }) {
       className="group glass-morphism-dark rounded-[2rem] p-4 md:p-6 border border-white/10 transition-colors duration-500 hover:border-white/30 hover:shadow-[0_0_40px_rgba(124,58,237,0.1)] flex flex-col h-full [perspective:1000px] cursor-view"
     >
       <div style={{ transform: "translateZ(30px)" }} className="flex flex-col h-full">
-        {/* Project Image Container */}
         <Link href={project.demo || '#'} target="_blank" className="relative w-full aspect-[4/3] rounded-2xl md:rounded-[1.5rem] overflow-hidden bg-black/50 mb-6 md:mb-8 border border-white/5 cursor-none">
           <Image
             src={project.image}
             alt={project.name}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100"
+            className={`transition-transform duration-700 ease-out opacity-90 group-hover:opacity-100 group-hover:scale-105 ${
+              project.id === 3 ? "object-contain p-4 md:p-6" : "object-cover"
+            }`}
             sizes="(max-width: 768px) 100vw, 500px"
           />
           {/* Hover Overlay */}
