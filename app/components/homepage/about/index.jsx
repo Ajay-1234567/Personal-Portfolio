@@ -56,7 +56,7 @@ function AboutSection() {
             </div>
 
             <p className="text-lg text-gray-400 leading-relaxed font-light">
-              I am {personalData.name}, a passionate UI/UX Designer dedicated to solving complex user problems with elegant, functional designs. My expertise lies in creating intuitive interfaces, comprehensive user research, and bringing ideas to life through high-fidelity prototyping.
+              {personalData.description}
             </p>
 
             {/* Info Cards */}

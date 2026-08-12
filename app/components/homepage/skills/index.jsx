@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SiFigma, SiCanva } from "react-icons/si";
-import { FiLayout, FiSearch, FiPenTool, FiLayers, FiSmartphone, FiBox } from "react-icons/fi";
+import { SiFigma, SiCanva, SiNotion, SiHtml5, SiCss3 } from "react-icons/si";
+import { FiLayout, FiSearch, FiPenTool, FiLayers, FiSmartphone, FiBox, FiCheckCircle, FiMap } from "react-icons/fi";
 
 function Skills() {
   const skills = [
@@ -12,8 +12,12 @@ function Skills() {
     { name: 'Prototyping', icon: FiLayers, color: '#3B82F6' },
     { name: 'Responsive Design', icon: FiSmartphone, color: '#10B981' },
     { name: 'Design Systems', icon: FiBox, color: '#F59E0B' },
+    { name: 'Usability Testing', icon: FiCheckCircle, color: '#F43F5E' },
+    { name: 'Information Arch', icon: FiMap, color: '#EAB308' },
     { name: 'Figma', icon: SiFigma, color: '#F24E1E' },
     { name: 'Canva', icon: SiCanva, color: '#00C4CC' },
+    { name: 'Notion', icon: SiNotion, color: '#000000' },
+    { name: 'HTML/CSS', icon: SiHtml5, color: '#E34F26' },
   ];
 
   const containerVariants = {

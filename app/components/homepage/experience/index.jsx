@@ -4,19 +4,18 @@ import { motion } from "framer-motion";
 
 function Experience() {
   const experiences = [
-    { title: "Exploring Product Design", desc: "Diving deep into end-to-end product strategy and business-centric design solutions.", date: "Present" },
-    { title: "Improving Design Systems", desc: "Creating scalable, reusable components and tokens for consistent UI across applications.", date: "Recent" },
-    { title: "Building Projects", desc: "Applying skills to real-world scenarios, crafting luxury apps and functional rental platforms.", date: "Past Year" },
-    { title: "Learning UI/UX", desc: "Mastering Figma, understanding user psychology, and practicing modern aesthetic principles.", date: "The Beginning" },
+    { title: "Bachelor of Computer Science", desc: "Centurion University of Technology and Management | Visakhapatnam, India", date: "2023 - 2027" },
+    { title: "Foundations of UX Design", desc: "Google Professional Certificate", date: "Dec 2025" },
+    { title: "Start the UX Design Process", desc: "Google Professional Certificate: Empathize, Define, and Ideate", date: "Dec 2025" },
   ];
 
   return (
     <section className="py-24 bg-[#0B0F19] relative">
       <div className="container mx-auto px-4 max-w-4xl relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">Journey</h2>
+          <h2 className="text-sm font-bold text-primary tracking-widest uppercase mb-4">Background</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            My <span className="text-gradient">Experience</span>.
+            Education & <span className="text-gradient">Certifications</span>.
           </h3>
         </div>
 
