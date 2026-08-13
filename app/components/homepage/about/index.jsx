@@ -37,7 +37,7 @@ function AboutSection() {
               <div className="relative w-full h-full rounded-[2rem] overflow-hidden bg-white/5">
                 <Image
                   src={personalData.profile || '/profile.png'}
-                  alt="Ajay Kumar"
+                  alt="G Ajay Kumar"
                   fill
                   className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
                   sizes="(max-width: 768px) 100vw, 500px"
@@ -51,7 +51,7 @@ function AboutSection() {
             <div className="space-y-4">
               <h2 className="text-sm font-bold text-primary tracking-widest uppercase">About Me</h2>
               <h3 className="text-4xl md:text-5xl font-bold text-white leading-tight">
-                Crafting digital experiences that <span className="text-gradient">connect</span> and <span className="text-gradient">convert</span>.
+                Where structure meets <span className="text-gradient">usability</span>.
               </h3>
             </div>
 

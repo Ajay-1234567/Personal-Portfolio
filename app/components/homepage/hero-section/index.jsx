@@ -55,7 +55,7 @@ function HeroSection() {
             </div>
             
             <p className="text-lg md:text-2xl text-gray-400 font-medium max-w-2xl mx-auto leading-relaxed">
-              Designing intuitive and visually engaging digital experiences with a focus on usability and modern aesthetics.
+              A Computer Science undergrad who designs role-based dashboards and workflow tools that people can actually navigate without a manual.
             </p>
           </motion.div>
 

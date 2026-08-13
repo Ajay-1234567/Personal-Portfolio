@@ -65,9 +65,14 @@ function ProjectCard({ project }) {
         </Link>
 
         <div className="px-1 flex flex-col flex-grow">
-          <h3 className="text-xl md:text-2xl font-bold text-white mb-3 tracking-tight leading-tight">
+          <h3 className="text-xl md:text-2xl font-bold text-white mb-1 tracking-tight leading-tight">
             {project.name}
           </h3>
+          {project.date && (
+            <p className="text-[11px] font-bold text-secondary uppercase tracking-wider mb-3">
+              {project.date}
+            </p>
+          )}
           
           <p className="text-gray-400 text-xs md:text-sm leading-relaxed mb-5 font-light line-clamp-3">
             {project.description}

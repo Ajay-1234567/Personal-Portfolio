@@ -15,14 +15,14 @@ function Footer() {
               <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white/10 shadow-sm group-hover:border-primary/50 transition-colors">
                 <Image
                   src="/favicon.png"
-                  alt="Ajay Kumar"
+                  alt="G Ajay Kumar"
                   fill
                   className="object-cover"
                 />
               </div>
-              <h2 className="text-2xl font-bold text-white tracking-tight">Ajay<span className="text-secondary">.</span></h2>
+              <h2 className="text-2xl font-bold text-white tracking-tight">G Ajay<span className="text-secondary">.</span></h2>
             </div>
-            <p className="text-gray-500 font-light text-sm">© {new Date().getFullYear()} Designed & Built by Ajay Kumar</p>
+            <p className="text-gray-500 font-light text-sm">© {new Date().getFullYear()} Designed & Built by G Ajay Kumar</p>
           </div>
 
           <div className="flex items-center gap-4">

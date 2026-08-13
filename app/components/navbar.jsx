@@ -45,12 +45,12 @@ function Navbar() {
             <div className="relative w-8 h-8 rounded-full overflow-hidden border border-gray-700 shadow-sm group-hover:scale-110 transition-transform duration-300">
               <Image
                 src="/favicon.png"
-                alt="Ajay Kumar"
+                alt="G Ajay Kumar"
                 fill
                 className="object-cover"
               />
             </div>
-            <span className="text-xl font-bold tracking-tight text-white group-hover:text-primary transition-colors">Ajay<span className="text-secondary">.</span></span>
+            <span className="text-xl font-bold tracking-tight text-white group-hover:text-primary transition-colors">G Ajay<span className="text-secondary">.</span></span>
           </Link>
 
           {/* Desktop Nav Links */}

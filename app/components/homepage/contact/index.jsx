@@ -14,7 +14,7 @@ function ContactSection() {
         <div className="text-center mb-16 md:mb-24">
           <h2 className="text-sm font-bold text-secondary tracking-widest uppercase mb-4">Let&apos;s Connect</h2>
           <h3 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
-            Ready to build <span className="text-gradient">something great?</span>
+            Let's talk about your team's <span className="text-gradient">next project.</span>
           </h3>
           <p className="text-gray-400 mt-4 font-medium max-w-xl mx-auto">
             Let&apos;s create impactful digital experiences together.
